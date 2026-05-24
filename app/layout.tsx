@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from 'next-themes';
+import GSAPScroll from "./components/GSAPScroll";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +28,26 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased tracking-wide`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ThemeProvider attribute={"data-theme"} defaultTheme="light" themes={['light', 'dark', 'neon']}>
+          <div className="w-full h-[10vh] flex items-center justify-end px-4 backdrop-blur-xl sticky top-0 z-50 shrink-0">
+            <ThemeSwitcher />
+          </div>
+          <GSAPScroll>
+            <div className="md:w-2/4 w-full min-h-screen mx-auto mt-[10vh] flex relative bg-background/80 backdrop-blur-xs p-2">
+              {/* <div className="w-[10vw] h-screen border-r sticky top-0 shrink-0">
+                <button>a</button>
+              </div> */}
+              <div className="w-full px-4 pb-20">
+                {children}
+              </div>
+            </div>
+          </GSAPScroll>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

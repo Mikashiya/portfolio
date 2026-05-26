@@ -85,5 +85,5 @@ body {
   background-repeat: var(--bg-patern-repeat);
   background-position: var(--bg-patern-position);
   font-family: Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, background-image 0.4s ease, color 0.3s ease;
+  transition: background-color 0.3s ease-in-out, background-image 0.4s ease-in-out, color 0.3s ease-in-out;
 }

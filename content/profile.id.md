@@ -17,6 +17,3 @@ Sebagai mahasiswa Sistem Informasi, saya tidak hanya menulis kode, tapi juga mem
 Hubungi saya melalui:
 1. Email: [nazmiabdullah2@gmail.com](mailto:nazmiabdullah2@gmail.com)
 2. No. HP: [+62 812-9343-9159](https://wa.me/6281293439159)
-
-&nbsp;
-

@@ -13,7 +13,7 @@ export default function GSAPScroll({ children }: { children:React.ReactNode }) {
             wrapper: "#smooth-wrapper",
             content: "#smooth-content",
             smooth: 1.5,
-            smoothTouch: 0.25,
+            smoothTouch: 0.5,
             effects: true,
         });
     });

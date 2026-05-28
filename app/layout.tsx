@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from 'next-themes';
 import GSAPScroll from "./components/GSAPScroll";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
+        <Analytics />
         <ThemeProvider attribute={"data-theme"} defaultTheme="light" themes={['light', 'dark', 'neon']}>
           <div className="w-full h-[10vh] flex items-center justify-end px-4 backdrop-blur-xl sticky top-0 z-50 shrink-0">
             <ThemeSwitcher />
